@@ -56,16 +56,27 @@ namespace TermProject
                     myCookie.Expires = new DateTime(2016, 1, 1);
                     myCookie["Username"] = txtUsername.Text;
                     Response.Cookies.Add(myCookie);
-                    //code here to create a cookie that remembers them
+                    
+
                 }
                 else if (rdoListLogin.SelectedItem.Value == "Don't Remember Me")
                 {
-                    //code here to delete the current cookie that remembers them
+                    
+                    
                 }
                 else
                 {
                     //Code here to log them in without creating nor destroying any cookies
                 }
+
+
+                
+
+
+                //Customer c = new Customer();
+
+
+                
             }
 
 
