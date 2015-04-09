@@ -1,0 +1,7 @@
+G:\CIS3342\CIS3342Solution\PizzaLibrary\bin\Release\PizzaLibrary.dll
+G:\CIS3342\CIS3342Solution\PizzaLibrary\bin\Release\PizzaLibrary.pdb
+G:\CIS3342\CIS3342Solution\PizzaLibrary\bin\Release\Utilities.dll
+G:\CIS3342\CIS3342Solution\PizzaLibrary\bin\Release\Utilities.pdb
+G:\CIS3342\CIS3342Solution\PizzaLibrary\obj\Release\PizzaLibrary.csprojResolveAssemblyReference.cache
+G:\CIS3342\CIS3342Solution\PizzaLibrary\obj\Release\PizzaLibrary.dll
+G:\CIS3342\CIS3342Solution\PizzaLibrary\obj\Release\PizzaLibrary.pdb

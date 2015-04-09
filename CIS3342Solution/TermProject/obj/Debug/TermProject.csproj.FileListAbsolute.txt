@@ -1,0 +1,7 @@
+G:\CIS3342\CIS3342Solution\TermProject\bin\TermProject.dll
+G:\CIS3342\CIS3342Solution\TermProject\bin\TermProject.pdb
+G:\CIS3342\CIS3342Solution\TermProject\bin\Utilities.dll
+G:\CIS3342\CIS3342Solution\TermProject\bin\Utilities.pdb
+G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.csprojResolveAssemblyReference.cache
+G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.dll
+G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.pdb

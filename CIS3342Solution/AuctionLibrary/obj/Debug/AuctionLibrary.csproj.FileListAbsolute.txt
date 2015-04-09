@@ -1,0 +1,7 @@
+G:\CIS3342\CIS3342Solution\AuctionLibrary\bin\Debug\AuctionLibrary.dll
+G:\CIS3342\CIS3342Solution\AuctionLibrary\bin\Debug\AuctionLibrary.pdb
+G:\CIS3342\CIS3342Solution\AuctionLibrary\obj\Debug\AuctionLibrary.csprojResolveAssemblyReference.cache
+G:\CIS3342\CIS3342Solution\AuctionLibrary\obj\Debug\AuctionLibrary.dll
+G:\CIS3342\CIS3342Solution\AuctionLibrary\obj\Debug\AuctionLibrary.pdb
+G:\CIS3342\CIS3342Solution\AuctionLibrary\bin\Debug\Utilities.dll
+G:\CIS3342\CIS3342Solution\AuctionLibrary\bin\Debug\Utilities.pdb

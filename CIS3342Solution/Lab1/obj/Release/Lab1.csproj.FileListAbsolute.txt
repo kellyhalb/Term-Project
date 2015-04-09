@@ -1,0 +1,7 @@
+G:\CIS3342\CIS3342Solution\Lab1\bin\Lab1.dll
+G:\CIS3342\CIS3342Solution\Lab1\bin\Lab1.pdb
+G:\CIS3342\CIS3342Solution\Lab1\obj\Release\Lab1.dll
+G:\CIS3342\CIS3342Solution\Lab1\obj\Release\Lab1.pdb
+G:\CIS3342\CIS3342Solution\Lab1\bin\Utilities.dll
+G:\CIS3342\CIS3342Solution\Lab1\bin\Utilities.pdb
+G:\CIS3342\CIS3342Solution\Lab1\obj\Release\Lab1.csprojResolveAssemblyReference.cache

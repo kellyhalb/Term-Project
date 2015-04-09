@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AddNewProductDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productdescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startingprice" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="reserveprice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="subcategory" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="date" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewProductDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateForDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateForDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateForDateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeInactiveDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MakeInactiveDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangeIfSoldDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productid" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="didsell" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeIfSoldDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="MovetoTransactions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sellerusername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bids" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentbid" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="winnerusername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MovetoTransactionsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RetrieveProductDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RetrieveProductDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RetrieveProductDBResult" type="tns:Product" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Product">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="productdescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sellerusername" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="auctionenddate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="currentbid" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="reserveprice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Productname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Productdescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sellerusername" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Auctionenddate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currentbid" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Reserveprice" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddBidDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="bidamount" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="currentbidder" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddBidDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProductBidsDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="currentbid" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="bidderusername" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProductBidsDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="SearchByCategory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchByCategoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchByCategoryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewMyAuctions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewMyAuctionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewMyAuctionsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productdescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProductIDResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProductDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteProductDBResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyProductDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="productID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="productname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productdescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="reserveprice" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyProductDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ModifyProductDBResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyBids">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMyBidsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMyBidsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUserDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="accounttype" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddNewUserDBResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddNewProductDBSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewProductDB" />
+  </wsdl:message>
+  <wsdl:message name="AddNewProductDBSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewProductDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateForDateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateForDate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateForDateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateForDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeInactiveDBSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeInactiveDB" />
+  </wsdl:message>
+  <wsdl:message name="MakeInactiveDBSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeInactiveDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeIfSoldDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeIfSoldDB" />
+  </wsdl:message>
+  <wsdl:message name="ChangeIfSoldDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeIfSoldDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="MovetoTransactionsSoapIn">
+    <wsdl:part name="parameters" element="tns:MovetoTransactions" />
+  </wsdl:message>
+  <wsdl:message name="MovetoTransactionsSoapOut">
+    <wsdl:part name="parameters" element="tns:MovetoTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProductDBSoapIn">
+    <wsdl:part name="parameters" element="tns:RetrieveProductDB" />
+  </wsdl:message>
+  <wsdl:message name="RetrieveProductDBSoapOut">
+    <wsdl:part name="parameters" element="tns:RetrieveProductDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddBidDBSoapIn">
+    <wsdl:part name="parameters" element="tns:AddBidDB" />
+  </wsdl:message>
+  <wsdl:message name="AddBidDBSoapOut">
+    <wsdl:part name="parameters" element="tns:AddBidDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductBidsDBSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProductBidsDB" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProductBidsDBSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProductBidsDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCategorySoapIn">
+    <wsdl:part name="parameters" element="tns:SearchByCategory" />
+  </wsdl:message>
+  <wsdl:message name="SearchByCategorySoapOut">
+    <wsdl:part name="parameters" element="tns:SearchByCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewMyAuctionsSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewMyAuctions" />
+  </wsdl:message>
+  <wsdl:message name="ViewMyAuctionsSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewMyAuctionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductID" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductDBSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProductDB" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProductDBSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProductDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyProductDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyProductDB" />
+  </wsdl:message>
+  <wsdl:message name="ModifyProductDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyProductDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMyBidsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMyBids" />
+  </wsdl:message>
+  <wsdl:message name="GetMyBidsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMyBidsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserDBSoapIn">
+    <wsdl:part name="parameters" element="tns:AddNewUserDB" />
+  </wsdl:message>
+  <wsdl:message name="AddNewUserDBSoapOut">
+    <wsdl:part name="parameters" element="tns:AddNewUserDBResponse" />
+  </wsdl:message>
+  <wsdl:portType name="OnlineAuctionSoap">
+    <wsdl:operation name="AddNewProductDB">
+      <wsdl:input message="tns:AddNewProductDBSoapIn" />
+      <wsdl:output message="tns:AddNewProductDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateForDate">
+      <wsdl:input message="tns:UpdateForDateSoapIn" />
+      <wsdl:output message="tns:UpdateForDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeInactiveDB">
+      <wsdl:input message="tns:MakeInactiveDBSoapIn" />
+      <wsdl:output message="tns:MakeInactiveDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIfSoldDB">
+      <wsdl:input message="tns:ChangeIfSoldDBSoapIn" />
+      <wsdl:output message="tns:ChangeIfSoldDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MovetoTransactions">
+      <wsdl:input message="tns:MovetoTransactionsSoapIn" />
+      <wsdl:output message="tns:MovetoTransactionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProductDB">
+      <wsdl:input message="tns:RetrieveProductDBSoapIn" />
+      <wsdl:output message="tns:RetrieveProductDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBidDB">
+      <wsdl:input message="tns:AddBidDBSoapIn" />
+      <wsdl:output message="tns:AddBidDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductBidsDB">
+      <wsdl:input message="tns:UpdateProductBidsDBSoapIn" />
+      <wsdl:output message="tns:UpdateProductBidsDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <wsdl:input message="tns:SearchByCategorySoapIn" />
+      <wsdl:output message="tns:SearchByCategorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewMyAuctions">
+      <wsdl:input message="tns:ViewMyAuctionsSoapIn" />
+      <wsdl:output message="tns:ViewMyAuctionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <wsdl:input message="tns:GetProductIDSoapIn" />
+      <wsdl:output message="tns:GetProductIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductDB">
+      <wsdl:input message="tns:DeleteProductDBSoapIn" />
+      <wsdl:output message="tns:DeleteProductDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProductDB">
+      <wsdl:input message="tns:ModifyProductDBSoapIn" />
+      <wsdl:output message="tns:ModifyProductDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyBids">
+      <wsdl:input message="tns:GetMyBidsSoapIn" />
+      <wsdl:output message="tns:GetMyBidsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserDB">
+      <wsdl:input message="tns:AddNewUserDBSoapIn" />
+      <wsdl:output message="tns:AddNewUserDBSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OnlineAuctionSoap" type="tns:OnlineAuctionSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNewProductDB">
+      <soap:operation soapAction="http://tempuri.org/AddNewProductDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateForDate">
+      <soap:operation soapAction="http://tempuri.org/UpdateForDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeInactiveDB">
+      <soap:operation soapAction="http://tempuri.org/MakeInactiveDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIfSoldDB">
+      <soap:operation soapAction="http://tempuri.org/ChangeIfSoldDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovetoTransactions">
+      <soap:operation soapAction="http://tempuri.org/MovetoTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProductDB">
+      <soap:operation soapAction="http://tempuri.org/RetrieveProductDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBidDB">
+      <soap:operation soapAction="http://tempuri.org/AddBidDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductBidsDB">
+      <soap:operation soapAction="http://tempuri.org/UpdateProductBidsDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <soap:operation soapAction="http://tempuri.org/SearchByCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewMyAuctions">
+      <soap:operation soapAction="http://tempuri.org/ViewMyAuctions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <soap:operation soapAction="http://tempuri.org/GetProductID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductDB">
+      <soap:operation soapAction="http://tempuri.org/DeleteProductDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProductDB">
+      <soap:operation soapAction="http://tempuri.org/ModifyProductDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyBids">
+      <soap:operation soapAction="http://tempuri.org/GetMyBids" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserDB">
+      <soap:operation soapAction="http://tempuri.org/AddNewUserDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="OnlineAuctionSoap12" type="tns:OnlineAuctionSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNewProductDB">
+      <soap12:operation soapAction="http://tempuri.org/AddNewProductDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateForDate">
+      <soap12:operation soapAction="http://tempuri.org/UpdateForDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeInactiveDB">
+      <soap12:operation soapAction="http://tempuri.org/MakeInactiveDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeIfSoldDB">
+      <soap12:operation soapAction="http://tempuri.org/ChangeIfSoldDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MovetoTransactions">
+      <soap12:operation soapAction="http://tempuri.org/MovetoTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveProductDB">
+      <soap12:operation soapAction="http://tempuri.org/RetrieveProductDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBidDB">
+      <soap12:operation soapAction="http://tempuri.org/AddBidDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProductBidsDB">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProductBidsDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchByCategory">
+      <soap12:operation soapAction="http://tempuri.org/SearchByCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewMyAuctions">
+      <soap12:operation soapAction="http://tempuri.org/ViewMyAuctions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductID">
+      <soap12:operation soapAction="http://tempuri.org/GetProductID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductDB">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProductDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyProductDB">
+      <soap12:operation soapAction="http://tempuri.org/ModifyProductDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyBids">
+      <soap12:operation soapAction="http://tempuri.org/GetMyBids" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewUserDB">
+      <soap12:operation soapAction="http://tempuri.org/AddNewUserDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OnlineAuction">
+    <wsdl:port name="OnlineAuctionSoap" binding="tns:OnlineAuctionSoap">
+      <soap:address location="http://cis-iis2.temple.edu/Spring2015/CIS3342_tud08570/Project3WS/OnlineAuction.asmx" />
+    </wsdl:port>
+    <wsdl:port name="OnlineAuctionSoap12" binding="tns:OnlineAuctionSoap12">
+      <soap12:address location="http://cis-iis2.temple.edu/Spring2015/CIS3342_tud08570/Project3WS/OnlineAuction.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

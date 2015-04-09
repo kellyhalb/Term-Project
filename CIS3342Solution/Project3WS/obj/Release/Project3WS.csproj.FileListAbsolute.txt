@@ -1,0 +1,9 @@
+G:\CIS3342\CIS3342Solution\Project3WS\bin\Project3WS.dll
+G:\CIS3342\CIS3342Solution\Project3WS\bin\Project3WS.pdb
+G:\CIS3342\CIS3342Solution\Project3WS\bin\AuctionLibrary.dll
+G:\CIS3342\CIS3342Solution\Project3WS\bin\Utilities.dll
+G:\CIS3342\CIS3342Solution\Project3WS\bin\AuctionLibrary.pdb
+G:\CIS3342\CIS3342Solution\Project3WS\bin\Utilities.pdb
+G:\CIS3342\CIS3342Solution\Project3WS\obj\Release\Project3WS.dll
+G:\CIS3342\CIS3342Solution\Project3WS\obj\Release\Project3WS.pdb
+G:\CIS3342\CIS3342Solution\Project3WS\obj\Release\Project3WS.csprojResolveAssemblyReference.cache

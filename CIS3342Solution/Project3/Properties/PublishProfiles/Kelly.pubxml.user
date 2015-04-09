@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>X:\Project3</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="AddProduct.aspx">
+      <publishTime>03/31/2015 11:51:04</publishTime>
+    </File>
+    <File Include="AuctionLogin.aspx">
+      <publishTime>04/01/2015 13:23:07</publishTime>
+    </File>
+    <File Include="bin/AuctionLibrary.dll">
+      <publishTime>04/03/2015 14:03:40</publishTime>
+    </File>
+    <File Include="bin/Project3.dll">
+      <publishTime>04/03/2015 15:05:11</publishTime>
+    </File>
+    <File Include="bin/Project3.XmlSerializers.dll">
+      <publishTime>04/03/2015 15:05:12</publishTime>
+    </File>
+    <File Include="bin/Utilities.dll">
+      <publishTime>04/03/2015 14:03:39</publishTime>
+    </File>
+    <File Include="Search.aspx">
+      <publishTime>04/01/2015 13:11:50</publishTime>
+    </File>
+    <File Include="UserHome.aspx">
+      <publishTime>04/01/2015 13:26:11</publishTime>
+    </File>
+    <File Include="ViewDetails.aspx">
+      <publishTime>04/01/2015 12:27:54</publishTime>
+    </File>
+    <File Include="ViewMyAuctions.aspx">
+      <publishTime>04/01/2015 11:39:11</publishTime>
+    </File>
+    <File Include="ViewMyBids.aspx">
+      <publishTime>04/01/2015 13:26:11</publishTime>
+    </File>
+    <File Include="Web References/OnlineAuctionSvc/OnlineAuction.disco">
+      <publishTime>04/03/2015 14:05:35</publishTime>
+    </File>
+    <File Include="Web References/OnlineAuctionSvc/OnlineAuction.wsdl">
+      <publishTime>04/03/2015 14:05:35</publishTime>
+    </File>
+    <File Include="Web References/OnlineAuctionSvc/Product.datasource">
+      <publishTime>04/03/2015 14:49:57</publishTime>
+    </File>
+    <File Include="Web References/OnlineAuctionSvc/Reference.map">
+      <publishTime>04/03/2015 14:05:35</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>04/03/2015 15:05:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

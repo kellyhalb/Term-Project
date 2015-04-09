@@ -1,0 +1,7 @@
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\bin\Debug\RestaurantLibrary.dll
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\bin\Debug\RestaurantLibrary.pdb
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\bin\Debug\Utilities.dll
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\bin\Debug\Utilities.pdb
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\obj\Debug\RestaurantLibrary.csprojResolveAssemblyReference.cache
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\obj\Debug\RestaurantLibrary.dll
+G:\CIS3342\CIS3342Solution\RestaurantLibrary\obj\Debug\RestaurantLibrary.pdb
