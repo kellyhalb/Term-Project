@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Utilities;
 using System.Data;
 using System.Data.SqlClient;
+using TermProjectLibrary;
 
 
 namespace TermProject
@@ -61,25 +62,36 @@ namespace TermProject
                 }
                 else if (rdoListLogin.SelectedItem.Value == "Don't Remember Me")
                 {
-                    
+                    if (Request.Cookies["theCookie"] != null)
+                    {
+                        Response.Cookies["theCookie"].Expires = DateTime.Now.AddDays(-1);
+                    }
                     
                 }
                 else
                 {
-                    //Code here to log them in without creating nor destroying any cookies
+                    return;
                 }
 
 
-                
+                SqlCommand commandPullUser = new SqlCommand();
+                commandPullUser.CommandType = CommandType.StoredProcedure;
+                commandPullUser.CommandText = "PullAllUserInfo";
+                commandPullUser.Parameters.AddWithValue("@inputUsername", username);
+                DataSet myUserDS;
+                myUserDS = objDB.GetDataSetUsingCmdObj(objCommand);
 
+                string name = Convert.ToString(myUserDS.Tables[0].Rows[0][1]);
+                string email = Convert.ToString(myUserDS.Tables[0].Rows[0][3]);
+                string address = Convert.ToString(myUserDS.Tables[0].Rows[0][2]);
+ 
 
-                //Customer c = new Customer();
-
+                Customer c = new Customer(name,email, address, username, password);
+                Session["Customer"] = c;
+                Response.Redirect("UserHome.aspx");
 
                 
             }
-
-
         }
 
 
@@ -124,46 +136,60 @@ namespace TermProject
                 return;
             }
 
-            //If they make it past input validation then check if a cookie needs to be made
+
             string username = txtNewUsername.Text;
-            string password = txtDesiredPassword.Text;
-            string name = txtNewName.Text;
-            string address = txtNewAddress.Text + ", " + txtNewCity.Text + ", " + txtNewState.Text + " " + txtNewZipCode.Text;
-            string email = txtNewEmail.Text;
 
+            DBConnect objDB = new DBConnect();
+            SqlCommand commandCheckExisting = new SqlCommand();
+            commandCheckExisting.CommandType = CommandType.StoredProcedure;
+            commandCheckExisting.CommandText = "CheckIfUserExists";
+            commandCheckExisting.Parameters.AddWithValue("@inputUsername", username);
+            DataSet myUserDS;
+            myUserDS = objDB.GetDataSetUsingCmdObj(commandCheckExisting);
 
-            if (rdoRememberMe.Checked)  //Remember Me is checked so make a cookie and create account
+            if (myUserDS.Tables[0].Rows.Count >= 1)
             {
-                HttpCookie myCookie = new HttpCookie("theCookie");
-                myCookie.Value = "CIS3342 Website";
-                myCookie.Expires = new DateTime(2016, 1, 1);
-                myCookie.Values["Username"] = txtUsername.Text;
-                Response.Cookies.Add(myCookie);
+                lblMessage.Text = "A Customer with this username already exists. Please choose another username";
+            }
+
+            else
+            {
+                //If they make it past input validation then check if a cookie needs to be made
+                //string username = txtNewUsername.Text;
+                string password = txtDesiredPassword.Text;
+                string name = txtNewName.Text;
+                string address = txtNewAddress.Text + ", " + txtNewCity.Text + ", " + txtNewState.Text + " " + txtNewZipCode.Text;
+                string email = txtNewEmail.Text;
 
 
+                if (rdoRememberMe.Checked)  //Remember Me is checked so make a cookie and create account
+                {
+                    HttpCookie myCookie = new HttpCookie("theCookie");
+                    myCookie.Expires = new DateTime(2016, 1, 1);
+                    myCookie["Username"] = txtNewUsername.Text;
+                    Response.Cookies.Add(myCookie);
+                   
+                }
+
+
+                    SqlCommand objCommand = new SqlCommand();
+                    objCommand.CommandType = CommandType.StoredProcedure;
+                    objCommand.CommandText = "CreateNewUser";
+                    objCommand.Parameters.AddWithValue("@inputUsername", username);
+                    objCommand.Parameters.AddWithValue("@inputPassword", password);
+                    objCommand.Parameters.AddWithValue("@inputName", name);
+                    objCommand.Parameters.AddWithValue("@inputEmail", email);
+                    objCommand.Parameters.AddWithValue("@inputAddress", address);
+
+                    objDB.DoUpdateUsingCmdObj(objCommand); //adds user to DB using stored procedure
+
+                    Customer newCustomer = new Customer(name, email, address, username, password);
+                    Session["Customer"] = newCustomer;
+                    Response.Redirect("UserHome.aspx");
+                
 
 
             }
-
-            else  //Remember me is not checked so create account without using a cookie
-            {
-                SqlCommand objCommand = new SqlCommand();
-                objCommand.CommandType = CommandType.StoredProcedure;
-                objCommand.CommandText = "CreateNewUser";
-                objCommand.Parameters.AddWithValue("@inputUsername", username);
-                objCommand.Parameters.AddWithValue("@inputPassword", password);
-                objCommand.Parameters.AddWithValue("@inputName", name);
-                objCommand.Parameters.AddWithValue("@inputEmail", email);
-                objCommand.Parameters.AddWithValue("@inputAddress", address);
-
-                DBConnect objDB = new DBConnect();
-                objDB.DoUpdateUsingCmdObj(objCommand); //adds user to DB using stored procedure
-
-                //add code here to make a new customer object and create a session
-            }
-
-
-            
 
             
         }

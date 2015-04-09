@@ -12,3 +12,5 @@ C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\
 C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.csprojResolveAssemblyReference.cache
 C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.dll
 C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.pdb
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\TermProjectLibrary.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\TermProjectLibrary.pdb

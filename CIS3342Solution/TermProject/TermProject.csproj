@@ -87,6 +87,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TermProjectLibrary\TermProjectLibrary.csproj">
+      <Project>{237006e8-d53a-4915-aefa-001712e89793}</Project>
+      <Name>TermProjectLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilities\Utilities.csproj">
       <Project>{ce35f69b-34f9-4cd4-8573-94e7e64570f5}</Project>
       <Name>Utilities</Name>

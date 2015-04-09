@@ -38,9 +38,9 @@
         <asp:TextBox ID="txtNewState" runat="server" style="z-index: 1; left: 571px; top: 419px; position: absolute; width: 36px"></asp:TextBox>
         <asp:TextBox ID="txtNewZipCode" runat="server" style="z-index: 1; left: 712px; top: 418px; position: absolute; width: 78px"></asp:TextBox>
         <asp:TextBox ID="txtNewUsername" runat="server" style="z-index: 1; left: 567px; top: 483px; position: absolute; width: 217px"></asp:TextBox>
-        <asp:TextBox ID="txtDesiredPassword" runat="server" style="z-index: 1; left: 570px; top: 537px; position: absolute; width: 216px"></asp:TextBox>
-        <asp:TextBox ID="txtDesiredPassword1" runat="server" style="z-index: 1; left: 573px; top: 585px; position: absolute; width: 210px"></asp:TextBox>
-        <asp:RadioButtonList ID="rdoListLogin" runat="server" style="z-index: 1; left: 109px; top: 271px; position: absolute; height: 52px; width: 154px">
+        <asp:TextBox ID="txtDesiredPassword" runat="server" style="z-index: 1; left: 570px; top: 537px; position: absolute; width: 216px" TextMode="Password"></asp:TextBox>
+        <asp:TextBox ID="txtDesiredPassword1" runat="server" style="z-index: 1; left: 573px; top: 585px; position: absolute; width: 210px" TextMode="Password"></asp:TextBox>
+        <asp:RadioButtonList ID="rdoListLogin" runat="server" style="z-index: 1; left: 95px; top: 271px; position: absolute; height: 52px; width: 198px">
             <asp:ListItem>Remember Me</asp:ListItem>
             <asp:ListItem>Don&#39;t Remember Me</asp:ListItem>
         </asp:RadioButtonList>
