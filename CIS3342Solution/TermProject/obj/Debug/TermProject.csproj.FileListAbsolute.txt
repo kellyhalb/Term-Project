@@ -5,3 +5,10 @@ G:\CIS3342\CIS3342Solution\TermProject\bin\Utilities.pdb
 G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.csprojResolveAssemblyReference.cache
 G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.dll
 G:\CIS3342\CIS3342Solution\TermProject\obj\Debug\TermProject.pdb
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\TermProject.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\TermProject.pdb
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\Utilities.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\bin\Utilities.pdb
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.csprojResolveAssemblyReference.cache
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\TermProject\obj\Debug\TermProject.pdb

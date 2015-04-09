@@ -3,3 +3,8 @@ G:\CIS3342\CIS3342Solution\Utilities\bin\Debug\Utilities.pdb
 G:\CIS3342\CIS3342Solution\Utilities\obj\Debug\Utilities.dll
 G:\CIS3342\CIS3342Solution\Utilities\obj\Debug\Utilities.pdb
 G:\CIS3342\CIS3342Solution\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\Utilities\bin\Debug\Utilities.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\Utilities\bin\Debug\Utilities.pdb
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\Utilities\obj\Debug\Utilities.csprojResolveAssemblyReference.cache
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\Utilities\obj\Debug\Utilities.dll
+C:\Users\tud08570\Documents\GitHub\Term-Project\CIS3342Solution\Utilities\obj\Debug\Utilities.pdb

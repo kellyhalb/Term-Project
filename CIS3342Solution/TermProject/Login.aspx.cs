@@ -13,9 +13,15 @@ namespace TermProject
 {
     public partial class Login : System.Web.UI.Page
     {
+        HttpCookie objCookie;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            objCookie = Request.Cookies["theCookie"];
 
+            if(Request.Cookies["theCookie"] != null)
+                {  txtUsername.Text = objCookie.Values["Username"].ToString(); }
         }
 
         protected void btnLogIn_Click(object sender, EventArgs e)
@@ -44,6 +50,12 @@ namespace TermProject
             {
                 if (rdoListLogin.SelectedItem.Value =="Remember Me")
                 {
+
+                    HttpCookie myCookie = new HttpCookie("theCookie");
+                
+                    myCookie.Expires = new DateTime(2016, 1, 1);
+                    myCookie["Username"] = txtUsername.Text;
+                    Response.Cookies.Add(myCookie);
                     //code here to create a cookie that remembers them
                 }
                 else if (rdoListLogin.SelectedItem.Value == "Don't Remember Me")
@@ -111,6 +123,14 @@ namespace TermProject
 
             if (rdoRememberMe.Checked)  //Remember Me is checked so make a cookie and create account
             {
+                HttpCookie myCookie = new HttpCookie("theCookie");
+                myCookie.Value = "CIS3342 Website";
+                myCookie.Expires = new DateTime(2016, 1, 1);
+                myCookie.Values["Username"] = txtUsername.Text;
+                Response.Cookies.Add(myCookie);
+
+
+
 
             }
 

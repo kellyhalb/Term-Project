@@ -30,7 +30,7 @@
         <asp:Label ID="lblreenterpassword" runat="server" style="z-index: 1; left: 384px; top: 587px; position: absolute" Text="Re-Enter Desired Password:"></asp:Label>
         <asp:Button ID="btnCreateAccount" runat="server" OnClick="btnCreateAccount_Click" style="z-index: 1; left: 548px; top: 679px; position: absolute" Text="Create New Account" />
         <asp:TextBox ID="txtUsername" runat="server" style="z-index: 1; left: 147px; top: 185px; position: absolute"></asp:TextBox>
-        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 147px; top: 235px; position: absolute"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" style="z-index: 1; left: 147px; top: 235px; position: absolute" TextMode="Password"></asp:TextBox>
         <asp:TextBox ID="txtNewName" runat="server" style="z-index: 1; left: 569px; top: 188px; position: absolute; width: 207px"></asp:TextBox>
         <asp:TextBox ID="txtNewEmail" runat="server" style="z-index: 1; left: 569px; top: 234px; position: absolute; width: 208px"></asp:TextBox>
         <asp:TextBox ID="txtNewAddress" runat="server" style="z-index: 1; left: 568px; top: 294px; position: absolute; width: 208px"></asp:TextBox>
